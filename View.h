@@ -11,8 +11,10 @@ class View : public QGraphicsView
     Q_OBJECT
 
 private:
-    QGraphicsScene *scene;
     QTimer *viewTimer;
+
+protected:
+    QGraphicsScene *scene;
 
 public:
     explicit View();
