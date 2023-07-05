@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/images">
         <file>background.png</file>
+        <file>helpButton.png</file>
+        <file>exitButton.png</file>
+        <file>playButton.png</file>
+        <file>backButton.png</file>
     </qresource>
 </RCC>
