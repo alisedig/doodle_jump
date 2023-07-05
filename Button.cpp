@@ -1,4 +1,7 @@
 #include "Button.h"
+#include <iostream>
+using namespace std;
+
 
 Button::Button(QString str)
 {
@@ -24,5 +27,13 @@ Button::Button(QString str)
 
 void Button::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    // To Do
+    if(action == "Play") cout << 1 << endl;
+
+    if(action == "Help") cout << 2 << endl;
+
     if(action == "Exit")  exit(1);
+
+    if(action == "Back") cout << 4 << endl;
+
 }
