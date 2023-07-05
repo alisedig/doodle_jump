@@ -1,12 +1,28 @@
 #include "Button.h"
-#include <QPen>
 
-Button::Button(int x, int y, QString str)
+Button::Button(QString str)
 {
-    ellipse = new QGraphicsEllipseItem();
-    ellipse->setRect(x, y, 150, 70);
-    QPen *Pen = new QPen("black");
-    Pen->setWidth(3);
-    ellipse->setPen(*Pen);
+    action = str;
 
+    if(str == "Play") {
+     setPixmap(QPixmap(":/images/playButton.png"));
+    }
+
+    if(str == "Help") {
+     setPixmap(QPixmap(":/images/helpButton.png"));
+    }
+
+    if(str == "Exit") {
+     setPixmap(QPixmap(":/images/exitButton.png"));
+    }
+
+    if(str == "Back") {
+     setPixmap(QPixmap(":/images/backButton.png"));
+    }
+
+}
+
+void Button::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    if(action == "Exit")  exit(1);
 }

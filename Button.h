@@ -3,17 +3,17 @@
 
 #include <QObject>
 #include <QGraphicsPixmapItem>
-#include <QGraphicsEllipseItem>
+#include <QGraphicsSceneMouseEvent>
 
 class Button: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 private:
-
+    QString action;
 public:
-    QGraphicsEllipseItem *ellipse;
     //constructor
-    Button(int x, int y, QString str);
+    Button(QString str);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
 signals:
 

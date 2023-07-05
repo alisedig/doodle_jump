@@ -2,9 +2,9 @@
 #define VIEW_H
 
 #include <QObject>
-#include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QTimer>
+#include "Controller.h"
 
 class View : public QGraphicsView
 {
@@ -12,9 +12,7 @@ class View : public QGraphicsView
 
 private:
     QTimer *viewTimer;
-
-protected:
-    QGraphicsScene *scene;
+    Controller *viewController;
 
 public:
     explicit View();

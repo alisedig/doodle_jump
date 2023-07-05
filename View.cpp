@@ -1,13 +1,13 @@
 #include "View.h"
-#include "Menu.h"
+#include "Button.h"
 
 View::View() : QGraphicsView()
 {
+    // ceate viewController
+    viewController = new Controller();
 
     // create scene
-    scene = new QGraphicsScene();
-    scene->setSceneRect(0, 0, 550, 750);
-    setScene(scene);
+    setScene(viewController->scene);
 
     // set background image
     setBackgroundBrush(QBrush(QImage(":/images/background.png")));
@@ -17,22 +17,24 @@ View::View() : QGraphicsView()
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    Button *x = new Button(200, 375, "play");
-    scene->addItem(x->ellipse);
+    auto button1 = new Button("Play");
+    button1->setPos(200,375);
+    viewController->scene->addItem(button1);
 
-    Button *y = new Button(200, 475, "help");
-    scene->addItem(y->ellipse);
+    auto button2 = new Button("Help");
+    button2->setPos(200,475);
+    viewController->scene->addItem(button2);
 
-    Button *z = new Button(200, 575, "quit");
-    scene->addItem(z->ellipse);
+    auto button3 = new Button("Exit");
+    button3->setPos(200,575);
+    viewController->scene->addItem(button3);
 
 
-    delete x; delete y; delete z;
 
 }
 
 View::~View()
 {
-    delete scene;
     delete viewTimer;
+    delete viewController;
 }
