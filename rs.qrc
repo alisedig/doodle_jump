@@ -5,5 +5,6 @@
         <file>exitButton.png</file>
         <file>playButton.png</file>
         <file>backButton.png</file>
+        <file>platform1.png</file>
     </qresource>
 </RCC>
