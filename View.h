@@ -13,12 +13,21 @@ class View : public QGraphicsView
 private:
     QTimer *viewTimer;
     Controller *viewController;
+    int seconds;
 
 public:
     explicit View();
     ~View();
 
 signals:
+
+public slots:
+    void incermentTime();
+    void menu();
+    void intro();
+    void help();
+    void singleMode();
+    void multiMode();
 
 };
 
