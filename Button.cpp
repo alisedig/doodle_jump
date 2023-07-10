@@ -2,10 +2,8 @@
 #include <iostream>
 using namespace std;
 
-
 Button::Button(QString str)
 {
-    action = str;
 
     if(str == "Play") {
      setPixmap(QPixmap(":/images/playButton.png"));
@@ -23,17 +21,17 @@ Button::Button(QString str)
      setPixmap(QPixmap(":/images/backButton.png"));
     }
 
+    if(str == "SinglePlayer") {
+     setPixmap(QPixmap(":/images/singleButton.png"));
+    }
+
+    if(str == "MultiPlayer") {
+     setPixmap(QPixmap(":/images/multiButton.png"));
+    }
+
 }
 
 void Button::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    // To Do
-    if(action == "Play") cout << 1 << endl;
-
-    if(action == "Help") cout << 2 << endl;
-
-    if(action == "Exit")  exit(1);
-
-    if(action == "Back") cout << 4 << endl;
-
+   emit clicked();
 }

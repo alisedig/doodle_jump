@@ -8,14 +8,14 @@
 class Button: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
-private:
-    QString action;
+
 public:
     //constructor
     Button(QString str);
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
 signals:
+    void clicked();
 
 };
 
