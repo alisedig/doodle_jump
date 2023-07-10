@@ -11,14 +11,16 @@ CONFIG += c++17
 SOURCES += \
     Button.cpp \
     Controller.cpp \
-    Menu.cpp \
+    Doodler.cpp \
+    Platform.cpp \
     View.cpp \
     main.cpp
 
 HEADERS += \
     Button.h \
     Controller.h \
-    Menu.h \
+    Doodler.h \
+    Platform.h \
     View.h
 
 # Default rules for deployment.
