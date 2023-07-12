@@ -13,7 +13,7 @@ Controller::Controller(QObject *parent)
 
     // create timer
     ctimer = new QTimer();
-    ctimer->start(40);
+    ctimer->start(35);
 }
 
 Controller::~Controller()
@@ -22,12 +22,14 @@ Controller::~Controller()
     delete scene;
 }
 
-void Controller::addPlatform()
+void Controller::addPlatform(int x, int y,QString s)
 {
-    platformList.push_back(new Platform(scene,holder,ctimer));
+    platformList.push_back(new Platform(scene,holder,ctimer, x, y,s));
 }
 
 void Controller::addDoodler()
 {
     doodlerList.push_back(new Doodler(scene,holder,ctimer));
+    doodlerList.last()->setFlag(QGraphicsItem::ItemIsFocusable);
+    doodlerList.last()->setFocus();
 }
