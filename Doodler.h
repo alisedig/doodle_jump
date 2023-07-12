@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
+#include <QKeyEvent>
 #include <QTimer>
 #include <cstdlib>
 
@@ -16,6 +17,7 @@ private:
 
 public:
     Doodler(QGraphicsScene *doodlerScene,QGraphicsItem *parent, QTimer *timer);
+    void keyPressEvent(QKeyEvent * keyEvent);
 };
 
 #endif // DOODLER_H
