@@ -12,6 +12,10 @@ SOURCES += \
     Button.cpp \
     Controller.cpp \
     Doodler.cpp \
+    Multidoodler1.cpp \
+    Multidoodler2.cpp \
+    Multiplatform1.cpp \
+    Multiplatform2.cpp \
     Platform.cpp \
     View.cpp \
     main.cpp
@@ -20,6 +24,10 @@ HEADERS += \
     Button.h \
     Controller.h \
     Doodler.h \
+    Multidoodler1.h \
+    Multidoodler2.h \
+    Multiplatform1.h \
+    Multiplatform2.h \
     Platform.h \
     View.h
 

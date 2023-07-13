@@ -1,7 +1,7 @@
-#include "Doodler.h"
-#include "Platform.h"
+#include "Multidoodler2.h"
+#include "Multiplatform2.h"
 
-Doodler::Doodler(QGraphicsScene *doodlerScene, QGraphicsItem *parent, QTimer *timer)
+Multidoodler2::Multidoodler2(QGraphicsScene *doodlerScene, QGraphicsItem *parent, QTimer *timer)
     : QObject() , QGraphicsPixmapItem(parent) , doodlerScene(doodlerScene)
 {
     // set picture
@@ -9,32 +9,32 @@ Doodler::Doodler(QGraphicsScene *doodlerScene, QGraphicsItem *parent, QTimer *ti
 
     // add to scene
     doodlerScene->addItem(this);
-    setPos(255,550);
+    setPos(400,550);
 
-    Platform::doodler_xPos = 255;
+    Multiplatform2::doodler_xPos = 255;
 }
 
-void Doodler::keyPressEvent(QKeyEvent *keyEvent)
+void Multidoodler2::keyPressEvent(QKeyEvent *keyEvent)
 {
     //move to right
     if(keyEvent->key() == Qt::Key_Right){
         this->setPixmap(QPixmap(":/images/doodler.png"));
-        setPos(x() + 15, y());
+        setPos(x() + 10, y());
     }
 
     //move to left
     if(keyEvent->key() == Qt::Key_Left){
         this->setPixmap(QPixmap(":/images/doodler2.png"));
-        setPos(x() - 15, y());
+        setPos(x() - 10, y());
     }
 
     if(x() >= 530){
-        setPos(x() - 550, y());
+        setPos(x() - 275, y());
 
     }
 
-    if(x() <= -20){
-        setPos(x() + 550, y());
+    if(x() <= 275){
+        setPos(x() + 275, y());
     }
-    Platform::doodler_xPos = x();
+    Multiplatform2::doodler_xPos = x();
 }

@@ -13,7 +13,6 @@ class Platform : public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 
     friend class Doodler;
-    friend class Doodler2;
 private:
     QGraphicsScene *platformScene;
     static float speed;
