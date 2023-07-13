@@ -13,13 +13,14 @@ class Platform : public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 
     friend class Doodler;
+    friend class Doodler2;
 private:
     QGraphicsScene *platformScene;
     static float speed;
     static int doodler_xPos;
-    QString type;
+    QString type,type2;
     int strength;
-    int m = rand() % 50 + 10,k=1,n=1;
+    int m,k,n;
     bool right = true;
 
 public:
