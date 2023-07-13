@@ -1,10 +1,10 @@
 #include "Multiplatform1.h"
 
 float Multiplatform1::speed = 9;
-int Multiplatform1::doodler_xPos;
+int Multiplatform1::doodler_xPos1;
 
 Multiplatform1::Multiplatform1(QGraphicsScene *platformScene, QGraphicsItem *parent, QTimer *timer, int x, int y,QString s)
-    : QObject(), QGraphicsPixmapItem(parent) , platformScene(platformScene) , type(s) , type2(s)
+    : QObject(), QGraphicsPixmapItem(parent) , platform1Scene(platformScene) , type(s) , type2(s)
 {
     speed = 9;
     m = rand()%5+1; k=1; n=1;
@@ -63,7 +63,7 @@ void Multiplatform1::Move1()
 {
 
     if(speed < 0)
-        if(((y() <= 589) && (y() >= 550)) && (((doodler_xPos <= x() + 49) && (x() - 40 <= doodler_xPos)))){
+        if(((y() <= 589) && (y() >= 550)) && (((doodler_xPos1 <= x() + 49) && (x() - 40 <= doodler_xPos1)))){
             if(type == "Green" || type == "Brown" || type == "Move") speed = 10;
             else if(type == "Spring") speed = 30;
             else if(type == "Rocket") speed = 40;

@@ -1,10 +1,10 @@
 #include "Multiplatform2.h"
 
 float Multiplatform2::speed = 9;
-int Multiplatform2::doodler_xPos;
+int Multiplatform2::doodler_xPos2;
 
 Multiplatform2::Multiplatform2(QGraphicsScene *platformScene, QGraphicsItem *parent, QTimer *timer, int x, int y,QString s)
-    : QObject(), QGraphicsPixmapItem(parent) , platformScene(platformScene) , type(s) , type2(s)
+    : QObject(), QGraphicsPixmapItem(parent) , platform2Scene(platformScene) , type(s) , type2(s)
 {
     speed = 9;
     m = rand()%5+1; k=1; n=1;
@@ -63,7 +63,7 @@ void Multiplatform2::Move2()
 {
 
     if(speed < 0)
-        if(((y() <= 589) && (y() >= 550)) && (((doodler_xPos <= x() + 49) && (x() - 40 <= doodler_xPos)))){
+        if(((y() <= 589) && (y() >= 550)) && (((doodler_xPos2 <= x() + 49) && (x() - 40 <= doodler_xPos2)))){
             if(type == "Green" || type == "Brown" || type == "Move") speed = 10;
             else if(type == "Spring") speed = 30;
             else if(type == "Rocket") speed = 40;
@@ -102,7 +102,7 @@ void Multiplatform2::Move2()
             k++;
         }
 
-        setPos(rand() % 250, y() - 700);
+        setPos(rand() % 250 + 250, y() - 700);
 
         if(type == "Green") strength = 5;
         if(type == "Brown") strength = 1;

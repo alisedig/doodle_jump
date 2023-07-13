@@ -14,9 +14,9 @@ class Multiplatform2 : public QObject, public QGraphicsPixmapItem
 
     friend class Multidoodler2;
 private:
-    QGraphicsScene *platformScene;
+    QGraphicsScene *platform2Scene;
     static float speed;
-    static int doodler_xPos;
+    static int doodler_xPos2;
     QString type,type2;
     int strength;
     int m,k,n;

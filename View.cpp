@@ -17,25 +17,12 @@ View::View() : QGraphicsView()
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    seconds = 0;
-    // set Timer
-    viewTimer = new QTimer();
-    viewTimer->start(1000);
-    // connect(viewTimer,SIGNAL(timeout()),this,SLOT(incermentTime()));
-
-
 }
 
 View::~View()
 {
     delete viewTimer;
     delete viewController;
-}
-
-void View::incermentTime()
-{
-    ++seconds;
-
 }
 
 void View::menu()
@@ -121,8 +108,8 @@ void View::singleMode()
     viewController->scene->addItem(backButton);
 
     // create platform
-    for(int i = 0; i <= 12; i++){
-        if(i != 10 && i%4 != 0 && i!=5 && i!=6 && i!=7 && i!=8){
+    for(int i = 0; i <= 15; i++){
+        if(i!=12 && i%4 != 0 && i!=5 && i!=6 && i!=7 && i!=8 && i!=9 && i!=10){
             viewController->addPlatform(rand() % 500, i * 60,"Green");
         }
         if(i%4 == 0 && i>0) {
@@ -137,14 +124,21 @@ void View::singleMode()
         if(i == 7) {
             viewController->addPlatform(rand() % 500, i * 60,"Rocket");
         }
-        if(i == 8) {
+        if(i == 9) {
+            viewController->addPlatform(rand() % 500, i * 60,"Shield");
+        }
+        if(i == 10) {
             viewController->addPlatform(rand() % 500, i * 60,"Speed");
+        }
+        if(i == 11) {
+            viewController->addPlatform(rand() % 500, i * 60,"Heart");
         }
     }
     viewController->addPlatform(245, 590,"Green");
 
     // create doodler
     viewController->addDoodler();
+
 
 }
 
@@ -185,7 +179,7 @@ void View::multiMode()
             viewController->addPlatform1(rand() % 250, i * 60,"Speed");
         }
     }
-    viewController->addPlatform1(245, 590,"Green");
+    viewController->addPlatform1(150, 590,"Green");
 
     // create doodler
     viewController->addDoodler1();

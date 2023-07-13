@@ -13,7 +13,7 @@ class Multidoodler1 : public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 
 private:
-    QGraphicsScene *doodlerScene;
+    QGraphicsScene *doodler1Scene;
 
 public:
     Multidoodler1(QGraphicsScene *doodlerScene,QGraphicsItem *parent, QTimer *timer);

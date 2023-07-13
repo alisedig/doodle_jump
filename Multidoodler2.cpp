@@ -2,7 +2,7 @@
 #include "Multiplatform2.h"
 
 Multidoodler2::Multidoodler2(QGraphicsScene *doodlerScene, QGraphicsItem *parent, QTimer *timer)
-    : QObject() , QGraphicsPixmapItem(parent) , doodlerScene(doodlerScene)
+    : QObject() , QGraphicsPixmapItem(parent) , doodler2Scene(doodlerScene)
 {
     // set picture
     setPixmap(QPixmap(":/images/doodler.png"));
@@ -11,7 +11,7 @@ Multidoodler2::Multidoodler2(QGraphicsScene *doodlerScene, QGraphicsItem *parent
     doodlerScene->addItem(this);
     setPos(400,550);
 
-    Multiplatform2::doodler_xPos = 255;
+    Multiplatform2::doodler_xPos2 = 400;
 }
 
 void Multidoodler2::keyPressEvent(QKeyEvent *keyEvent)
@@ -36,5 +36,5 @@ void Multidoodler2::keyPressEvent(QKeyEvent *keyEvent)
     if(x() <= 275){
         setPos(x() + 275, y());
     }
-    Multiplatform2::doodler_xPos = x();
+    Multiplatform2::doodler_xPos2 = x();
 }
