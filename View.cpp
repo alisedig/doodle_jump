@@ -50,7 +50,7 @@ void View::menu()
     viewController->scene->addItem(menuPic);
 
     //play button
-    Button * playButton = new Button("Play");
+    Button *playButton = new Button("Play");
     playButton->setPos(200, 375);
     connect(playButton, SIGNAL(clicked()), this, SLOT(intro()));
     viewController->scene->addItem(playButton);
@@ -141,7 +141,7 @@ void View::singleMode()
             viewController->addPlatform(rand() % 500, i * 60,"Speed");
         }
     }
-    viewController->addPlatform(245, 590,"Brown");
+    viewController->addPlatform(245, 590,"Green");
 
     // create doodler
     viewController->addDoodler();
@@ -152,6 +152,11 @@ void View::multiMode()
 {
     //clear the screen
     viewController->scene->clear();
+
+    QGraphicsPixmapItem * meultiPic = new QGraphicsPixmapItem();
+    meultiPic->setPixmap(QPixmap(":/images/background2.png"));
+    meultiPic->setPos(0, 20);
+    viewController->scene->addItem(meultiPic);
 
     //back button
     Button * backButton = new Button("Back");
